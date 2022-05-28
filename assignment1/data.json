@@ -1,0 +1,17 @@
+items = [
+        {
+            "name": "SEASONS MUSHROOMS",
+            "ingredients": "crab, shrimp, cream cheese",
+            "instructions": "Slow-cooked for eight hours, this intensely flavored and juicy lamb shank, infused with fresh rosemary and sage, is a house specialty. Served with smooth mashed potatoes and char-grilled, crispy asparagus, topped with a tangy golden-brown glaze for a meal hard to forget."
+        },
+        {
+            "name": "SEASONS MUSHROOMS",
+            "ingredients": "crab, shrimp, cream cheese",
+            "instructions": "Slow-cooked for eight hours, this intensely flavored and juicy lamb shank, infused with fresh rosemary and sage, is a house specialty. Served with smooth mashed potatoes and char-grilled, crispy asparagus, topped with a tangy golden-brown glaze for a meal hard to forget."
+        },
+        {
+            "name": "MUSSELS PROVENÇAL",
+            "ingredients": "shallots, garlic, white wine, fresh roma tomatoes, basil",
+            "instructions": "Slow-cooked for eight hours, this intensely flavored and juicy lamb shank, infused with fresh rosemary and sage, is a house specialty. Served with smooth mashed potatoes and char-grilled, crispy asparagus, topped with a tangy golden-brown glaze for a meal hard to forget."
+        }
+    ];

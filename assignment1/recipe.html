@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css" />
+	<script type="text/javascript" src="data.json"></script>
+	<script>
+		
+		function drawCards(){
+			var dishes_content = document.getElementById("dishes");
+			for(var i=0;i<items.length;i++){
+				var dish_card = document.createElement("div");
+				dish_card.classList.add("column");
+
+				var title_elem = document.createElement("h4");
+				title_elem.classList.add("column-title");
+				var title = document.createTextNode(items[i].name);
+				console.log(items[i].name);
+				title_elem.appendChild(title);
+				dish_card.appendChild(title_elem);
+
+				var ingre = document.createElement("div");
+				ingre.classList.add("ingre_div");
+				var ingre_content = document.createTextNode("Ingredients: "+items[i].ingredients);
+				ingre.appendChild(ingre_content);
+				dish_card.appendChild(ingre);
+
+				var description_div = document.createElement("div");
+				description_div.classList.add("column-description");
+				var description = document.createTextNode(items[i].instructions);
+				description_div.appendChild(description);
+				dish_card.appendChild(description_div);
+
+
+				dishes_content.appendChild(dish_card);
+			}
+		}
+		function addCards(){
+			
+			var name = document.getElementById("title").value;
+			var ingred = document.getElementById("ingre").value;
+			var discrip = document.getElementById("discrip").value;
+			
+			var dishes_content = document.getElementById("dishes");
+			var dish_card = document.createElement("div");
+				dish_card.classList.add("column");
+
+				var title_elem = document.createElement("h4");
+				title_elem.classList.add("column-title");
+				var title = document.createTextNode(name);
+				
+				title_elem.appendChild(title);
+				dish_card.appendChild(title_elem);
+
+				var ingre = document.createElement("div");
+				ingre.classList.add("ingre_div");
+				var ingre_content = document.createTextNode("Ingredients: "+ingred);
+				ingre.appendChild(ingre_content);
+				dish_card.appendChild(ingre);
+
+				var description_div = document.createElement("div");
+				description_div.classList.add("column-description");
+				var description = document.createTextNode(discrip);
+				description_div.appendChild(description);
+				dish_card.appendChild(description_div);
+
+
+				dishes_content.appendChild(dish_card);
+				console.log(dishes_content);
+				
+
+		}
+		function clearCards(){
+			
+			var inputs = document.querySelectorAll("input");
+			
+			for(var i=0;i<inputs.length;i++){
+				console.log(inputs[i].value);
+				inputs[i].value="";
+			}
+		}
+		function deleteAll(){
+				var allCards = document.getElementsByClassName("column");
+				for(var i=0;i<allCards.length;i++){
+					allCards[i].classList.add("hidden");
+				}
+			}
+	</script>
+</head>
+
+<body onload="drawCards()">
+		<nav class="navbar">
+			<!-- LOGO -->
+			<div class="logo">Seasons in the Park</div>
+			<!-- NAVIGATION MENU -->
+			<ul class="nav-links">
+			  <!-- USING CHECKBOX HACK 
+			  <input type="checkbox" id="checkbox_toggle" />
+			  <label for="checkbox_toggle" class="hamburger">&#9776;</label> -->
+			  <!-- NAVIGATION MENUS -->
+			  <div class="menu">
+				<li><a href="recipe.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+			  </div>
+		</nav>
+	<div id="main-content" class="container">
+		<div><h2>Our Menu</h2></div>
+		<div id="dishes">
+		
+		</div>
+		<button onclick="deleteAll()">Delete All Cards</button>
+		
+			<div id="form" action="#"><label>Title: </label> <input id="title"><br>
+			<label>Ingredients:  </label><input id="ingre"><br>
+			<label>Instructions: </label><input id="discrip"><br>
+			<button onclick="addCards()">Add</button> 
+			<button onclick="clearCards()">Clear</button>
+			</div>
+	</div><!-- End of #main-content -->
+
+	<footer class="panel-footer">   <!--default background, padding -->
+	</footer>
+	
+</body>
+</html>
